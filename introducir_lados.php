@@ -12,9 +12,9 @@ $figura = $_GET['figura'];
 <body>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="card p-4 shadow custom-card w-100" style="max-width: 400px;">
-            <h2 class="text-center mb-4">Introduce los datos para: <?php echo htmlspecialchars($figura); ?></h2>
+            <h2 class="text-center mb-4">Introduce los datos para: <?php echo $figura; ?></h2>
             <form action="resultado.php" method="post">
-                <input type="hidden" name="figura" value="<?php echo htmlspecialchars($figura); ?>">
+                <input type="hidden" name="figura" value="<?php echo $figura; ?>">
                 <?php
                 switch ($figura) {
                     case 'cuadrado':
