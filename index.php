@@ -32,13 +32,3 @@
     </div>
 </body>
 </html>
-
-<?php
-session_start();
-if (isset($_GET['figura'])) {
-    $_SESSION['figura'] = $_GET['figura'];
-    // Opcional: redirige a la siguiente página
-    // header('Location: introducir_lados.php');
-    // exit;
-}
-?>
