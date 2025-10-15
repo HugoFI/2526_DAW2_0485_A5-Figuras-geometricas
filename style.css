@@ -1,0 +1,26 @@
+
+body {
+	background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+	min-height: 100vh;
+}
+
+.custom-card {
+	max-width: 400px;
+	border-radius: 18px;
+	background: #fff;
+	border: 1px solid #e3e3e3;
+}
+
+.form-select:focus {
+	border-color: #86b7fe;
+	box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+.btn-primary {
+	background-color: #4f8cff;
+	border: none;
+	transition: background 0.2s;
+}
+.btn-primary:hover {
+	background-color: #2563eb;
+}
