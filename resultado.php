@@ -32,42 +32,53 @@ $lado2 = isset($_POST['lado2']) ? floatval($_POST['lado2']) : null;
             <?php
             
             $figura = $_POST['figura'] ?? '';
-            echo '<div class="mb-3"><strong>Figura:</strong> ' . $figura . '</div>';
+            // Mostrar resultado usando __toString() de cada clase
             switch ($figura) {
                 case 'cuadrado':
                     $lado = $_POST['lado'] ?? '';
-                    echo '<div class="mb-3"><strong>Lado:</strong> ' . $lado . '</div>';
-                    echo '<div class="mb-3"><strong>Área:</strong> ' . $lado * $lado . '</div>';
-                    echo '<div class="mb-3"><strong>Perímetro:</strong> ' . 4 * $lado . '</div>';
+                    if ($lado !== '') {
+                        $obj = new Cuadrado($lado);
+                        echo '<div class="mb-3">' . $obj . '</div>';
+                    } else {
+                        echo '<div class="alert alert-danger">Falta el lado del cuadrado.</div>';
+                    }
                     break;
                 case 'rectangulo':
                     $lado1 = $_POST['lado1'] ?? '';
                     $lado2 = $_POST['lado2'] ?? '';
-                    echo '<div class="mb-3"><strong>Lado 1:</strong> ' . $lado1 . '</div>';
-                    echo '<div class="mb-3"><strong>Lado 2:</strong> ' . $lado2 . '</div>';
-                    echo '<div class="mb-3"><strong>Área:</strong> ' . $lado1 * $lado2 . '</div>';
-                    echo '<div class="mb-3"><strong>Perímetro:</strong> ' . 2 * ($lado1 + $lado2) . '</div>';
+                    if ($lado1 !== '' && $lado2 !== '') {
+                        $obj = new Rectangulo($lado1, $lado2);
+                        echo '<div class="mb-3">' . $obj . '</div>';
+                    } else {
+                        echo '<div class="alert alert-danger">Faltan lados del rectángulo.</div>';
+                    }
                     break;
                 case 'triangulo':
-                    $base = $_POST['base'] ?? '';
-                    $altura = $_POST['altura'] ?? '';
-                    echo '<div class="mb-3"><strong>Base:</strong> ' . $base . '</div>';
-                    echo '<div class="mb-3"><strong>Altura:</strong> ' . $altura . '</div>';
-                    echo '<div class="mb-3"><strong>Área:</strong> ' . ($base * $altura) / 2 . '</div>';
-                    echo '<div class="mb-3"><strong>Perímetro:</strong> ' . $base + 2 * sqrt(($base ** 2) + ($altura ** 2)) . '</div>';
+                    $lado1 = $_POST['lado1'] ?? '';
+                    $lado2 = $_POST['lado2'] ?? '';
+                    $lado3 = $_POST['lado3'] ?? '';
+                    if ($lado1 !== '' && $lado2 !== '' && $lado3 !== '') {
+                        $obj = new Triangulo($lado1, $lado2, $lado3);
+                        echo '<div class="mb-3">' . $obj . '</div>';
+                    } else {
+                        echo '<div class="alert alert-danger">Faltan lados del triángulo.</div>';
+                    }
                     break;
                 case 'circulo':
                     $radio = $_POST['radio'] ?? '';
-                    echo '<div class="mb-3"><strong>Radio:</strong> ' . $radio . '</div>';
-                    echo '<div class="mb-3"><strong>Área:</strong> ' . (pi() * ($radio ** 2)) . '</div>';
-                    echo '<div class="mb-3"><strong>Perímetro:</strong> ' . (2 * pi() * $radio) . '</div>';
+                    if ($radio !== '') {
+                        $obj = new Circulo($radio);
+                        echo '<div class="mb-3">' . $obj . '</div>';
+                    } else {
+                        echo '<div class="alert alert-danger">Falta el radio del círculo.</div>';
+                    }
                     break;
                 default:
                     echo '<div class="alert alert-danger">Figura no válida.</div>';
             }
             ?>
             <div class="d-grid mt-4">
-                <a href="./introducir_lados.php" class="btn btn-secondary">Editar lados</a>
+                <a href="./introducir_lados.php" class="btn btn-secondary" name="figura" value="<?php echo $figura; ?>">Editar lados</a>
                 <br>
                 <a href="./index.php" class="btn btn-primary btn-lg">Volver al inicio</a>
             </div>
