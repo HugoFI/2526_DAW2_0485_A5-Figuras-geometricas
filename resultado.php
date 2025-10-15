@@ -78,11 +78,9 @@ $lado2 = isset($_POST['lado2']) ? floatval($_POST['lado2']) : null;
             }
             ?>
             <div class="d-grid mt-4">
-                <form action="introducir_lados.php" method="get" class="mb-2">
-                    <input type="hidden" name="figura" value="<?php echo $figura; ?>">
-                    <button type="submit" class="btn btn-secondary btn-lg">Editar lados</button>
-                    <a href="./index.php" class="btn btn-primary btn-lg">Volver al inicio</a>
-                </form>
+                <a href="./introducir_lados.php" class="btn btn-secondary" name="figura" value="<?php echo $figura; ?>">Editar lados</a>
+                <br>
+                <a href="./index.php" class="btn btn-primary btn-lg">Volver al inicio</a>
             </div>
         </div>
     </div>
