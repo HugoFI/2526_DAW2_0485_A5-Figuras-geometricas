@@ -25,8 +25,9 @@ $figura = $_GET['figura'];
                         echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="lado2" name="lado2" required placeholder="Lado 2"><label for="lado2">Lado 2</label></div>';
                         break;
                     case 'triangulo':
-                        echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="base" name="base" required placeholder="Base"><label for="base">Base</label></div>';
-                        echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="altura" name="altura" required placeholder="Altura"><label for="altura">Altura</label></div>';
+                        echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="lado1" name="lado1" required placeholder="Lado 1"><label for="lado1">Lado 1</label></div>';
+                        echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="lado2" name="lado2" required placeholder="Lado 2"><label for="lado2">Lado 2</label></div>';
+                        echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="lado3" name="lado3" required placeholder="Lado 3"><label for="lado3">Lado 3</label></div>';
                         break;
                     case 'circulo':
                         echo '<div class="form-floating mb-3"><input type="number" class="form-control" id="radio" name="radio" required placeholder="Radio"><label for="radio">Radio</label></div>';
